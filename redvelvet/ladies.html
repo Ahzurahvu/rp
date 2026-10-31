@@ -16,11 +16,25 @@ header{position:relative;z-index:5;padding:18px clamp(20px,5vw,80px);display:fle
 footer{text-align:center;padding:28px 18px;color:#aa9288;font-size:10px;letter-spacing:.18em;border-top:1px solid #a77c5a28}
 @media(max-width:950px){.dossier{grid-template-columns:1fr}.visual{min-height:620px}.visual:after{background:linear-gradient(0deg,#19080d 0%,transparent 33%)}.identity{padding:28px 26px 45px}.links{gap:12px}.brand{font-size:29px}}
 @media(max-width:620px){header{padding:14px 15px;flex-wrap:wrap;gap:15px}.links{width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{flex:none}.intro{padding:45px 20px 25px}.selectors{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}.selector{flex:none}.visual{min-height:510px}.identity h2{font-size:58px}.facts{gap:12px}.looks{padding:34px 15px 55px}.look-grid{gap:8px}.look span{padding:9px;font-size:9px}.looks-title{align-items:flex-end}}
+
+/* Editorial character dossier inspired by a portrait-and-insets profile board */
+.dossier{grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);border-color:#bd987359}
+.visual{min-height:720px;background:#120406}
+.visual>img{object-position:42% 23%;width:76%;height:100%}
+.visual:after{background:linear-gradient(90deg,transparent 54%,#19080d 100%),linear-gradient(0deg,#19080d 0%,transparent 25%);z-index:1}
+.visual-insets{position:absolute;z-index:3;right:3%;top:11%;width:28%;display:grid;gap:16px}
+.visual-insets button{width:100%;aspect-ratio:4/5;padding:0;background:#250b13;border:1px solid #c29a7185;cursor:pointer;overflow:hidden;box-shadow:0 15px 45px #08010388}
+.visual-insets img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.visual-insets button:hover,.visual-insets button:focus-visible{outline:1px solid #d5b28c;outline-offset:3px}
+.visual-watermark{position:absolute;z-index:3;bottom:25px;left:30px;color:#dabd9c;letter-spacing:.29em;font-size:11px;text-shadow:0 2px 10px #000}
+.identity{background:radial-gradient(ellipse at 80% 10%,#4b1523,#19080d 72%)}
+@media(max-width:950px){.dossier{grid-template-columns:1fr}.visual{min-height:670px}.visual>img{width:77%;height:100%}.visual-insets{width:26%;right:4%;top:9%}}
+@media(max-width:620px){.visual{min-height:520px}.visual>img{width:82%;object-position:43% 25%}.visual-insets{width:29%;right:3%;top:10%;gap:10px}.visual-watermark{font-size:8px;bottom:16px;left:16px}.identity{padding:30px 22px 40px}}
 </style></head><body>
 <header><a href="index.html" class="brand"><small>THE</small>Red <em>Velvet</em></a><nav class="links"><a href="index.html">Home</a><a href="ladies.html" aria-current="page">Our Ladies</a><a href="index.html#experience">The Experience</a><a href="uniform.html">Our Uniform</a><a class="inv" href="index.html#invitation">By Invitation Only</a></nav></header>
 <main><section class="intro"><div class="kicker">THE RED VELVET · CHARACTER COLLECTION</div><h1>Our Ladies</h1><p>Extraordinary women. Each with her own allure.</p></section>
 <div class="selectors" id="selectors" aria-label="Choose a featured character"></div>
-<section class="dossier" id="profile" aria-live="polite"><div class="visual"><img id="portrait" alt="" src="../rpc/lee-seoyeun/rv-qipao.webp"></div>
+<section class="dossier" id="profile" aria-live="polite"><div class="visual"><img id="portrait" alt="" src="../rpc/lee-seoyeun/rv-qipao.webp"><div class="visual-insets"><button type="button" id="insetJacket" aria-label="Show Jacket look"><img id="insetJacketImage" src="../rpc/lee-seoyeun/rv-jacket.webp" alt="Jacket look"></button><button type="button" id="insetLingerie" aria-label="Show Red Velvet look"><img id="insetLingerieImage" src="../rpc/lee-seoyeun/rv-lingerie.webp" alt="Red Velvet look"></button></div><span class="visual-watermark">THE RED VELVET</span></div>
 <div class="identity"><div class="number" id="number">FEATURED 01 / 03</div><h2 id="name">Lee Seoyeun</h2><div class="native" id="native">이서연</div><div class="rule"></div><p class="bio" id="bio">A featured character in The Red Velvet collection, presented in the house's signature qipao.</p><div class="facts" id="facts"></div></div></section>
 <section class="looks"><div class="looks-title"><h3>Her Lookbook</h3><p>Three signature portraits</p></div><div class="look-grid" id="looks"></div></section></main>
 <footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer>
@@ -34,11 +48,11 @@ const views=[["rv-qipao","The Qipao"],["rv-jacket","The Jacket"],["rv-lingerie",
 const selectors=document.getElementById("selectors"),looks=document.getElementById("looks"),portrait=document.getElementById("portrait");
 const img=(person,style)=>"../rpc/"+person.folder+"/"+style+".webp";
 function choose(id){const p=people.find(x=>x.id===id)||people[0];let i=people.indexOf(p);
-portrait.src=img(p,"rv-qipao");portrait.alt=p.name+" wearing the Red Velvet qipao";document.getElementById("number").textContent="FEATURED "+String(i+1).padStart(2,"0")+" / 03";document.getElementById("name").textContent=p.name;document.getElementById("native").textContent=p.native;document.getElementById("bio").textContent=p.description;
+portrait.src=img(p,"rv-qipao");document.getElementById("insetJacketImage").src=img(p,"rv-jacket");document.getElementById("insetLingerieImage").src=img(p,"rv-lingerie");portrait.alt=p.name+" wearing the Red Velvet qipao";document.getElementById("number").textContent="FEATURED "+String(i+1).padStart(2,"0")+" / 03";document.getElementById("name").textContent=p.name;document.getElementById("native").textContent=p.native;document.getElementById("bio").textContent=p.description;
 document.getElementById("facts").replaceChildren();for(const [label,value] of [["Name",p.name],["Age",p.age],["Country",p.country],["Height",p.height]]){let item=document.createElement("div");let small=document.createElement("small");small.textContent=label;let strong=document.createElement("strong");strong.textContent=value;item.append(small,strong);document.getElementById("facts").append(item)}
 for(const btn of selectors.children)btn.setAttribute("aria-pressed",String(btn.dataset.id===p.id));
 looks.replaceChildren();for(const [style,label] of views){const button=document.createElement("button");button.className="look";button.type="button";button.setAttribute("aria-label","View "+p.name+" in "+label);const im=document.createElement("img");im.src=img(p,style);im.loading="lazy";im.alt=p.name+" — "+label;const cap=document.createElement("span");cap.textContent=label;button.append(im,cap);button.addEventListener("click",()=>{portrait.src=img(p,style);portrait.alt=im.alt;document.getElementById("profile").scrollIntoView({behavior:"smooth",block:"start"})});looks.append(button)}
 if(location.hash!=="#"+p.id)history.replaceState(null,"","#"+p.id)}
 for(const p of people){const b=document.createElement("button");b.type="button";b.className="selector";b.dataset.id=p.id;b.textContent=p.name;b.addEventListener("click",()=>choose(p.id));selectors.append(b)}
-choose(location.hash.slice(1));addEventListener("hashchange",()=>choose(location.hash.slice(1)));
+document.getElementById("insetJacket").addEventListener("click",()=>{const p=people.find(x=>x.id===location.hash.slice(1))||people[0];portrait.src=img(p,"rv-jacket");portrait.alt=p.name+" — The Jacket"});document.getElementById("insetLingerie").addEventListener("click",()=>{const p=people.find(x=>x.id===location.hash.slice(1))||people[0];portrait.src=img(p,"rv-lingerie");portrait.alt=p.name+" — Red Velvet Look"});choose(location.hash.slice(1));addEventListener("hashchange",()=>choose(location.hash.slice(1)));
 </script></body></html>
