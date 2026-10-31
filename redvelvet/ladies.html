@@ -30,13 +30,22 @@ footer{text-align:center;padding:28px 18px;color:#aa9288;font-size:10px;letter-s
 .identity{background:radial-gradient(ellipse at 80% 10%,#4b1523,#19080d 72%)}
 @media(max-width:950px){.dossier{grid-template-columns:1fr}.visual{min-height:670px}.visual>img{width:77%;height:100%}.visual-insets{width:26%;right:4%;top:9%}}
 @media(max-width:620px){.visual{min-height:520px}.visual>img{width:82%;object-position:43% 25%}.visual-insets{width:29%;right:3%;top:10%;gap:10px}.visual-watermark{font-size:8px;bottom:16px;left:16px}.identity{padding:30px 22px 40px}}
+
+/* Finishing details for the luxury character dossier */
+.visual-insets .insets-title{font-size:9px;letter-spacing:.17em;color:#e8c6a3;text-shadow:0 1px 5px #000;text-align:center}
+.visual-insets button{transition:transform .2s,border-color .2s}
+.visual-insets button:hover,.visual-insets button:focus-visible{transform:translateX(-4px);border-color:#e4c29a}
+.dossier{box-shadow:0 22px 60px rgba(5,0,2,.22)}
+.identity .bio{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,1.7vw,23px);line-height:1.55}
+.look:focus-visible,.selector:focus-visible{outline:2px solid #e2bb88;outline-offset:3px}
+@media(max-width:620px){.visual-insets .insets-title{font-size:7px;line-height:1.3}.looks-title p{max-width:125px;text-align:right;line-height:1.5}}
 </style></head><body>
 <header><a href="index.html" class="brand"><small>THE</small>Red <em>Velvet</em></a><nav class="links"><a href="index.html">Home</a><a href="ladies.html" aria-current="page">Our Ladies</a><a href="index.html#experience">The Experience</a><a href="uniform.html">Our Uniform</a><a class="inv" href="index.html#invitation">By Invitation Only</a></nav></header>
 <main><section class="intro"><div class="kicker">THE RED VELVET · CHARACTER COLLECTION</div><h1>Our Ladies</h1><p>Extraordinary women. Each with her own allure.</p></section>
 <div class="selectors" id="selectors" aria-label="Choose a featured character"></div>
-<section class="dossier" id="profile" aria-live="polite"><div class="visual"><img id="portrait" alt="" src="../rpc/lee-seoyeun/rv-qipao.webp"><div class="visual-insets"><button type="button" id="insetJacket" aria-label="Show Jacket look"><img id="insetJacketImage" src="../rpc/lee-seoyeun/rv-jacket.webp" alt="Jacket look"></button><button type="button" id="insetLingerie" aria-label="Show Red Velvet look"><img id="insetLingerieImage" src="../rpc/lee-seoyeun/rv-lingerie.webp" alt="Red Velvet look"></button></div><span class="visual-watermark">THE RED VELVET</span></div>
+<section class="dossier" id="profile" aria-live="polite"><div class="visual"><img id="portrait" alt="" src="../rpc/lee-seoyeun/rv-qipao.webp"><div class="visual-insets"><span class="insets-title">ALTERNATE PORTRAITS</span><button type="button" id="insetJacket" aria-label="Show Jacket look"><img id="insetJacketImage" src="../rpc/lee-seoyeun/rv-jacket.webp" alt="Jacket look"></button><button type="button" id="insetLingerie" aria-label="Show Red Velvet look"><img id="insetLingerieImage" src="../rpc/lee-seoyeun/rv-lingerie.webp" alt="Red Velvet look"></button></div><span class="visual-watermark">THE RED VELVET</span></div>
 <div class="identity"><div class="number" id="number">FEATURED 01 / 03</div><h2 id="name">Lee Seoyeun</h2><div class="native" id="native">이서연</div><div class="rule"></div><p class="bio" id="bio">A featured character in The Red Velvet collection, presented in the house's signature qipao.</p><div class="facts" id="facts"></div></div></section>
-<section class="looks"><div class="looks-title"><h3>Her Lookbook</h3><p>Three signature portraits</p></div><div class="look-grid" id="looks"></div></section></main>
+<section class="looks"><div class="looks-title"><h3>Her Lookbook</h3><p>Select a portrait to view above</p></div><div class="look-grid" id="looks"></div></section></main>
 <footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer>
 <script>
 const people=[
