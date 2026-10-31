@@ -96,12 +96,46 @@ figure{margin:0;min-width:0}figure img{width:100%;display:block;object-fit:cover
 .outfit-placeholder{background:radial-gradient(ellipse at 50% 45%,#683041,#210b12 70%);color:#e8c9af}
 .outfit-placeholder .placeholder-mark,.outfit-placeholder p,.outfit-placeholder small{color:#e8c9af}
 @media(max-width:650px){.collection{padding:48px 17px 66px}.outfit{padding:13px}.outfit-grid{gap:25px}}
+
+/* Uniform page aligned with the Our Ladies editorial profile */
+.uniform-intro{text-align:center;padding:70px 20px 42px;background:radial-gradient(ellipse at 50% 130%,#571529,#160609 75%)}
+.uniform-intro .kicker{color:#c5a77e;font-size:10px;letter-spacing:.32em}
+.uniform-intro h1{font-size:clamp(52px,7vw,94px);font-weight:400;line-height:1.05;margin:15px 0 9px}
+.uniform-intro p{font:300 15px/1.7 Jost,Arial,sans-serif;color:#cbb8ae}
+.uniform-selectors{display:flex;justify-content:center;gap:10px;padding:20px 15px 28px;background:#17070b}
+.uniform-select{background:transparent;color:#dbbfa7;border:1px solid #82604c65;padding:12px 22px;font:400 11px Jost,Arial,sans-serif;letter-spacing:.16em;cursor:pointer}
+.uniform-select[aria-pressed="true"]{background:#6a1c32;border-color:#c5a77e;color:#fff}
+.uniform-feature{max-width:1480px;margin:auto;min-height:700px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);background:#19080d}
+.uniform-product{position:relative;display:grid;place-items:center;min-height:700px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#512036,#19080d 70%)}
+.uniform-product:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 75%,#19080d 100%)}
+.uniform-product img{display:block;max-width:100%;width:100%;height:690px;object-fit:contain;filter:drop-shadow(0 18px 30px #0b010766)}
+.uniform-info{padding:clamp(35px,5vw,85px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 80% 10%,#4b1523,#19080d 72%)}
+.uniform-info .eyebrow{font:11px Jost,Arial,sans-serif;letter-spacing:.24em;color:#c5a77e;margin-bottom:22px}
+.uniform-info h2{font-size:clamp(58px,7vw,92px);line-height:1}
+.outfit-subtitle{font:clamp(23px,2.7vw,33px) 'Cormorant Garamond',Georgia,serif;color:#d5ad96;margin:12px 0 23px}
+.uniform-info .line{margin:0 0 24px}
+#outfitDescription{max-width:460px;font:clamp(18px,1.9vw,24px)/1.5 'Cormorant Garamond',Georgia,serif;color:#dcc5bb}
+.outfit-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}
+.outfit-nav button{cursor:pointer;background:#33111b;color:#ecd6bf;border:1px solid #b89a7455;padding:12px 16px;letter-spacing:.12em;text-transform:uppercase;font:10px Jost,Arial,sans-serif}
+.outfit-nav button:hover,.outfit-nav button:focus-visible{border-color:#c5a77e;background:#672337}
+.uniform-missing{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#dabb95;letter-spacing:.18em;gap:9px}.uniform-missing[hidden]{display:none}
+.uniform-missing span{font:65px Georgia,serif;color:#a82442}.uniform-missing small{font:10px Jost,Arial,sans-serif}
+@media(max-width:900px){.uniform-feature{grid-template-columns:1fr}.uniform-product{min-height:490px}.uniform-product img{height:min(110vw,620px)}.uniform-product:after{background:linear-gradient(0deg,#19080d,transparent 27%)}.uniform-info{padding:30px 26px 56px}.uniform-intro{padding:46px 16px 34px}}
+@media(max-width:450px){.uniform-product{min-height:400px}.uniform-product img{height:470px}.uniform-info h2{font-size:60px}.uniform-select{padding:12px 14px}}
 </style></head><body>
 <header><a class="brand" href="index.html"><small>THE</small>Red <em>Velvet</em></a><nav><a href="index.html">Home</a><a href="index.html#ladies">Our Ladies</a><a href="index.html#experience">The Experience</a><a class="outline" href="index.html#invitation">By Invitation Only</a></nav></header>
-<main><section class="hero"><img class="uniform-hero-photo" src="asset/uniform-hero.webp" alt="" aria-hidden="true" onerror="this.style.display='none'"><div class="hero-content"><div class="line"></div><div class="eyebrow">Our Uniform</div><h1>Unmistakably Red Velvet.</h1><p class="lead">Elegant. Sensual. Distinctive.</p><p>Our signature uniform pairs deep burgundy velvet with intricate gold floral embroidery and delicate lace. Designed to embody feminine allure and timeless sophistication, every detail is part of The Red Velvet experience.</p></div></section>
-<section class="collection" aria-label="Our two uniforms">
-<div class="collection-heading"><div class="line"></div><span class="eyebrow">The Collection</span><h2>Two Signature Looks.</h2></div>
-<div class="outfit-grid">
-<article class="outfit"><div class="outfit-image"><img src="asset/uniform-qipao.webp" alt="The Qipao — burgundy velvet, floral embroidery and black lace stockings" loading="lazy" onerror="this.src='asset/uniform.webp';this.onerror=null"></div><div class="outfit-label"><span>01</span><h3>The Qipao <small>— Timeless Elegance</small></h3><p>Rooted in tradition, the qipao was chosen for its graceful silhouette and timeless femininity. Rich burgundy velvet reflects The Red Velvet’s signature warmth, elegance, and allure.</p></div></article>
-<article class="outfit"><div class="outfit-image outfit-placeholder"><img src="asset/uniform-jacket.webp" alt="The Jacket — burgundy embroidered cropped jacket, skirt and black lace stockings" loading="lazy" onload="this.parentNode.classList.remove('outfit-placeholder')" onerror="this.style.display='none'"><div class="outfit-waiting"><div class="placeholder-mark">THE RED VELVET</div><p>THE JACKET</p><small>Upload uniform-jacket.webp</small></div></div><div class="outfit-label"><span>02</span><h3>The Jacket <small>— A Modern Expression</small></h3><p>A contemporary interpretation of traditional Chinese design, the embroidered velvet jacket blends heritage with modern sophistication. Chosen for its versatility, it offers a bolder, more playful expression of The Red Velvet’s identity.</p></div></article>
-</div></section></main><footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer></body></html>
+<main>
+<section class="uniform-intro"><div class="kicker">THE RED VELVET · SIGNATURE COLLECTION</div><h1>Our Uniform</h1><p>Elegant. Sensual. Unmistakably Red Velvet.</p></section>
+<div class="uniform-selectors" aria-label="Choose an outfit"><button type="button" class="uniform-select" data-look="qipao" aria-pressed="true">THE QIPAO</button><button type="button" class="uniform-select" data-look="jacket" aria-pressed="false">THE JACKET</button></div>
+<section class="uniform-feature" aria-live="polite"><div class="uniform-product"><img id="featuredOutfit" src="asset/uniform-qipao.webp" alt="The Qipao uniform" /><div class="uniform-missing" hidden><span>❁</span>THE RED VELVET<small>TO BE UPDATED</small></div></div><div class="uniform-info"><div class="eyebrow" id="outfitNumber">SIGNATURE LOOK · 01 / 02</div><h2 id="outfitName">The Qipao</h2><p class="outfit-subtitle" id="outfitSubtitle">Timeless Elegance</p><div class="line"></div><p id="outfitDescription">Rooted in tradition, the qipao was chosen for its graceful silhouette and timeless femininity. Rich burgundy velvet reflects The Red Velvet’s signature warmth, elegance, and allure.</p><div class="outfit-nav"><button type="button" id="previousLook">← Previous Look</button><button type="button" id="nextLook">Next Look →</button></div></div></section>
+</main><footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer><script>
+const outfits=[
+{key:"qipao",name:"The Qipao",subtitle:"Timeless Elegance",src:"asset/uniform-qipao.webp",description:"Rooted in tradition, the qipao was chosen for its graceful silhouette and timeless femininity. Rich burgundy velvet reflects The Red Velvet’s signature warmth, elegance, and allure."},
+{key:"jacket",name:"The Jacket",subtitle:"A Modern Expression",src:"asset/uniform-jacket.webp",description:"A contemporary interpretation of traditional Chinese design, the embroidered velvet jacket blends heritage with modern sophistication. Chosen for its versatility, it offers a bolder, more playful expression of The Red Velvet’s identity."}
+];
+let active=0;const pic=document.getElementById("featuredOutfit"),missing=document.querySelector(".uniform-missing");
+function chooseOutfit(i){active=(i+outfits.length)%outfits.length;const o=outfits[active];document.getElementById("outfitNumber").textContent="SIGNATURE LOOK · "+String(active+1).padStart(2,"0")+" / 02";document.getElementById("outfitName").textContent=o.name;document.getElementById("outfitSubtitle").textContent=o.subtitle;document.getElementById("outfitDescription").textContent=o.description;pic.style.display="block";missing.hidden=true;pic.onerror=()=>{pic.style.display="none";missing.hidden=false};pic.src=o.src;pic.alt=o.name+" uniform";document.querySelectorAll(".uniform-select").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.look===o.key)))}
+document.querySelectorAll(".uniform-select").forEach(b=>b.addEventListener("click",()=>chooseOutfit(outfits.findIndex(o=>o.key===b.dataset.look))));
+document.getElementById("previousLook").addEventListener("click",()=>chooseOutfit(active-1));
+document.getElementById("nextLook").addEventListener("click",()=>chooseOutfit(active+1));
+</script></body></html>
