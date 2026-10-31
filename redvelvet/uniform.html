@@ -138,4 +138,5 @@ function chooseOutfit(i){active=(i+outfits.length)%outfits.length;const o=outfit
 document.querySelectorAll(".uniform-select").forEach(b=>b.addEventListener("click",()=>chooseOutfit(outfits.findIndex(o=>o.key===b.dataset.look))));
 document.getElementById("previousLook").addEventListener("click",()=>chooseOutfit(active-1));
 document.getElementById("nextLook").addEventListener("click",()=>chooseOutfit(active+1));
+chooseOutfit(0);
 </script></body></html>
