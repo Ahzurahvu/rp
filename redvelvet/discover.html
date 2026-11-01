@@ -99,22 +99,56 @@ footer{text-align:center;padding:26px 20px;font-size:10px;letter-spacing:.18em;c
 .discover-art:after{background:linear-gradient(90deg,transparent 66%,rgba(25,8,13,.83) 95%,#19080d),linear-gradient(0deg,#19080d,transparent 24%)}
 @media(max-width:950px){.discover-feature{grid-template-columns:1fr}.discover-art{min-height:600px}.discover-art:after{background:linear-gradient(0deg,#19080d,transparent 30%)}}
 @media(max-width:620px){.discover-art{min-height:430px}.discover-intro{padding:45px 20px 25px}.discover-selectors{justify-content:center}.discover-select{font-size:10px;padding:10px 12px}}
+
+/* The Suites is a separate collection, not a Discover tab. */
+.suites-collection{background:linear-gradient(180deg,#19080d 0%,#280c17 40%,#160609 100%);padding:90px clamp(18px,4vw,65px) 105px}
+.suites-intro{text-align:center;max-width:760px;margin:0 auto 46px}
+.suites-intro h2{font-size:clamp(62px,7vw,100px);margin:14px 0 18px}
+.suites-intro p{color:#d8c1b7;font:clamp(20px,2vw,27px)/1.45 "Cormorant Garamond",Georgia,serif}
+.suite-grid{max-width:1430px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.suite-card{overflow:hidden;position:relative;min-height:375px;background:#230b13;border:1px solid rgba(197,167,126,.18);display:flex;flex-direction:column}
+.suite-image{height:245px;position:relative;background:radial-gradient(ellipse at 50% 42%,var(--glow),transparent 65%),linear-gradient(135deg,var(--tone),#160609);overflow:hidden}
+.suite-image:before{content:"";position:absolute;inset:18% 17% 0;border:2px solid rgba(223,185,129,.22);border-bottom:none;border-radius:105px 105px 0 0;box-shadow:0 0 40px rgba(0,0,0,.4),inset 0 0 75px rgba(0,0,0,.3)}
+.suite-image:after{content:"";position:absolute;left:15%;right:15%;bottom:0;height:28%;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(255,255,255,.07));border-radius:40% 40% 0 0;box-shadow:0 -8px 48px var(--glow)}
+.suite-copy{padding:19px 21px 26px;background:linear-gradient(180deg,#290d17,#1b080f);flex:1}
+.suite-copy span{font-size:10px;letter-spacing:.23em;color:#c5a77e}
+.suite-copy h3{font:400 clamp(27px,2.5vw,37px)/1.1 "Cormorant Garamond",Georgia,serif;margin:9px 0}
+.suite-copy p{font-size:12px;line-height:1.6;color:#cdb8b0}
+.suite-card.crimson{--tone:#592033;--glow:#b24b60}
+.suite-card.sakura{--tone:#866071;--glow:#e4a8af}
+.suite-card.imperial{--tone:#67401c;--glow:#bd8535}
+.suite-card.midnight{--tone:#292135;--glow:#735c95}
+.suite-card.parisian{--tone:#8b6e65;--glow:#e6c69d}
+.suite-card.oasis{--tone:#22554c;--glow:#58a48c}
+.suite-card.eden{--tone:#294d39;--glow:#7eb48a}
+.suite-card.celestial{--tone:#203c68;--glow:#5e94ca}
+@media(max-width:1000px){.suite-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.suites-collection{padding:66px 18px 75px}.suite-grid{gap:11px}.suite-card{min-height:305px}.suite-image{height:155px}.suite-copy{padding:15px 12px 18px}.suite-copy h3{font-size:26px}.suite-copy p{font-size:11px}.suites-intro{margin-bottom:30px}}
 </style></head><body>
 <header class="rv-header"><a class="rv-logo" href="index.html"><span class="rv-rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="rv-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="ladies.html">Our Ladies</a><a href="uniform.html">Our Uniform</a><a href="discover.html" aria-current="page">Discover</a><a href="index.html#invitation">Our Story</a><a href="index.html#invitation">The House List</a><a href="index.html#invitation">The Rules</a><a href="index.html#invitation" class="rv-invite">By Invitation Only</a></nav></header>
 <main>
 <section class="discover-intro"><div class="eyebrow">THE RED VELVET · BEHIND THE VELVET</div><h1>Discover</h1><p>Beyond its doors lies a world of discretion, elegance, and unforgettable encounters.</p></section>
-<div class="discover-selectors" role="group" aria-label="Explore The Red Velvet"><button class="discover-select" data-scene="house" aria-pressed="true">THE HOUSE</button><button class="discover-select" data-scene="suites" aria-pressed="false">THE SUITES</button><button class="discover-select" data-scene="experience" aria-pressed="false">THE EXPERIENCE</button></div>
-<section class="discover-feature" aria-live="polite"><div class="discover-art house" id="discoverArt" role="img" aria-label="The House"><span class="discover-art-caption" id="discoverCaption">THE RED VELVET · 01</span></div><div class="discover-info"><div class="eyebrow" id="discoverNumber">DISCOVER · 01 / 03</div><h2 id="discoverName">The House</h2><div class="line"></div><p id="discoverDescription">Beyond the entrance, the world grows quieter. Warm light, velvet textures and a sense of privacy define a house where every detail has been chosen with care.</p><div class="discover-controls"><button type="button" id="discoverPrev">← Previous</button><button type="button" id="discoverNext">Next →</button></div></div></section>
+<div class="discover-selectors" role="group" aria-label="Explore The Red Velvet"><button class="discover-select" data-scene="house" aria-pressed="true">THE HOUSE</button><button class="discover-select" data-scene="experience" aria-pressed="false">THE EXPERIENCE</button></div>
+<section class="discover-feature" aria-live="polite"><div class="discover-art house" id="discoverArt" role="img" aria-label="The House"><span class="discover-art-caption" id="discoverCaption">THE RED VELVET · 01</span></div><div class="discover-info"><div class="eyebrow" id="discoverNumber">DISCOVER · 01 / 02</div><h2 id="discoverName">The House</h2><div class="line"></div><p id="discoverDescription">Beyond the entrance, the world grows quieter. Warm light, velvet textures and a sense of privacy define a house where every detail has been chosen with care.</p><div class="discover-controls"><button type="button" id="discoverPrev">← Previous</button><button type="button" id="discoverNext">Next →</button></div></div></section>
+<section class="suites-collection" id="suites"><div class="suites-intro"><div class="eyebrow">EIGHT ROOMS · EIGHT DISTINCT WORLDS</div><h2>The Suites</h2><p>Beyond the lounge, eight private retreats await. Each has its own atmosphere, from timeless romance to modern escape.</p></div><div class="suite-grid" id="suiteGrid">
+<article class="suite-card crimson"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>01 / 08</span><h3>The Crimson Suite</h3><p>Burgundy velvet, black marble and gilded details.</p></div></article>
+<article class="suite-card sakura"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>02 / 08</span><h3>The Sakura Suite</h3><p>Quiet Japanese elegance and soft blossom hues.</p></div></article>
+<article class="suite-card imperial"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>03 / 08</span><h3>The Imperial Suite</h3><p>Rich lacquered wood and silk-inspired warmth.</p></div></article>
+<article class="suite-card midnight"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>04 / 08</span><h3>The Midnight Suite</h3><p>Gothic romance and dramatic shadow.</p></div></article>
+<article class="suite-card parisian"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>05 / 08</span><h3>The Parisian Suite</h3><p>Ivory, champagne gold and classical grace.</p></div></article>
+<article class="suite-card oasis"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>06 / 08</span><h3>The Oasis Suite</h3><p>Emerald tones and lantern-lit serenity.</p></div></article>
+<article class="suite-card eden"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>07 / 08</span><h3>The Eden Suite</h3><p>A lush sanctuary inspired by nature.</p></div></article>
+<article class="suite-card celestial"><div class="suite-image" aria-hidden="true"></div><div class="suite-copy"><span>08 / 08</span><h3>The Celestial Suite</h3><p>Contemporary luxury beneath a midnight-blue glow.</p></div></article>
+</div></section>
 <section class="closing"><div class="eyebrow">YOUR STORY BEGINS HERE</div><h2>Meet Our Ladies</h2><p>Every character has a story. Discover the women who bring The Red Velvet to life.</p><a class="button" href="ladies.html">Explore Our Ladies →</a></section>
 </main>
 <footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer><script>
 const scenes=[
 {key:"house",name:"The House",description:"Beyond the entrance, the world grows quieter. Warm light, velvet textures and a sense of privacy define a house where every detail has been chosen with care."},
-{key:"suites",name:"The Suites",description:"Each private suite carries its own atmosphere — intimate, considered and distinctly Red Velvet. A retreat from the world outside, made for quiet conversation and unhurried moments."},
 {key:"experience",name:"The Experience",description:"It is the little things that linger: a thoughtful welcome, an evening shared, and the freedom to let the story take its own course. Every encounter belongs to the world you create."}
 ];
 let current=0;
-function showScene(i){current=(i+scenes.length)%scenes.length;const scene=scenes[current];const art=document.getElementById("discoverArt");art.className="discover-art "+scene.key;art.setAttribute("aria-label",scene.name);document.getElementById("discoverCaption").textContent="THE RED VELVET · "+String(current+1).padStart(2,"0");document.getElementById("discoverNumber").textContent="DISCOVER · "+String(current+1).padStart(2,"0")+" / 03";document.getElementById("discoverName").textContent=scene.name;document.getElementById("discoverDescription").textContent=scene.description;document.querySelectorAll(".discover-select").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.scene===scene.key)))}
+function showScene(i){current=(i+scenes.length)%scenes.length;const scene=scenes[current];const art=document.getElementById("discoverArt");art.className="discover-art "+scene.key;art.setAttribute("aria-label",scene.name);document.getElementById("discoverCaption").textContent="THE RED VELVET · "+String(current+1).padStart(2,"0");document.getElementById("discoverNumber").textContent="DISCOVER · "+String(current+1).padStart(2,"0")+" / 02";document.getElementById("discoverName").textContent=scene.name;document.getElementById("discoverDescription").textContent=scene.description;document.querySelectorAll(".discover-select").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.scene===scene.key)))}
 document.querySelectorAll(".discover-select").forEach(b=>b.addEventListener("click",()=>showScene(scenes.findIndex(x=>x.key===b.dataset.scene))));
 document.getElementById("discoverPrev").addEventListener("click",()=>showScene(current-1));
 document.getElementById("discoverNext").addEventListener("click",()=>showScene(current+1));
