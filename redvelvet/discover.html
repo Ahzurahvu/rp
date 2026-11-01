@@ -193,6 +193,20 @@ footer{text-align:center;padding:26px 20px;font-size:10px;letter-spacing:.18em;c
 .rv-villa-details h3{font-size:clamp(39px,5vw,65px)!important}
 .rv-villa-gallery-head,.rv-gallery,.rv-layout-toggle-row,.rv-layout{display:none!important}
 @media(max-width:680px){.rv-villa-photo{aspect-ratio:3/2!important;min-height:0!important}.rv-villa-details{padding:26px 20px 34px!important}}
+
+/* Full-size pavilion artwork, no redundant explore-gallery or layout toggle */
+.rv-villa-simple{max-width:1500px;margin:0 auto;border:1px solid rgba(194,151,111,.25);overflow:hidden;background:#1b0810}
+.rv-villa-fullimage{display:block;width:100%;line-height:0;background:#160609;text-decoration:none;cursor:zoom-in}
+.rv-villa-fullimage img{display:block;width:100%;height:auto;object-fit:contain;max-width:none;aspect-ratio:3 / 2}
+.rv-villa-fullimage img[hidden]{display:none}
+.rv-villa-image-fallback{padding:110px 20px;text-align:center;color:#dec6af;font:32px Georgia,serif;line-height:1.3;min-height:350px}
+.rv-villa-image-fallback[hidden]{display:none}
+.rv-villa-summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px clamp(20px,4vw,54px) 32px;background:linear-gradient(100deg,#28101a,#3a1423 70%,#1b0810)}
+.rv-villa-summary-text{max-width:850px}
+.rv-villa-summary h3{font:400 clamp(35px,4vw,56px)/1.05 "Cormorant Garamond",Georgia,serif;margin:9px 0;color:#f5dfcb}
+.rv-villa-summary p{font:clamp(17px,1.5vw,22px)/1.4 "Cormorant Garamond",Georgia,serif;color:#e0c9bc;margin:0}
+.rv-villa-summary-controls{display:flex;gap:9px;flex-shrink:0;align-items:center}
+@media(max-width:760px){.rv-villa-summary{flex-direction:column;align-items:flex-start;padding:22px 20px 26px}.rv-villa-summary-controls{width:100%;justify-content:flex-start}.rv-villa-fullimage img{aspect-ratio:auto}.rv-villa-summary h3{font-size:39px}}
 </style></head><body>
 <header class="rv-header"><a class="rv-logo" href="index.html"><span class="rv-rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="rv-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="discover.html#house" aria-current="page">The Estate</a><a href="discover.html#suites">The Suites</a><a href="ladies.html">Our Ladies</a><a href="index.html#invitation">The House List</a><a href="index.html#invitation">Contact</a></nav><a class="rv-access" href="index.html#invitation">♙ Member Access</a></header>
 <main>
@@ -202,37 +216,17 @@ footer{text-align:center;padding:26px 20px;font-size:10px;letter-spacing:.18em;c
 <section class="suites-collection" id="suites">
 <div class="suites-intro"><div class="eyebrow">THE RED VELVET · PRIVATE ESTATE</div><h2>The Suites</h2><p>Eight secluded Asian-inspired villas, each with its own character and setting.</p></div>
 <div class="suite-selectors" role="group" aria-label="Choose a villa"><button type="button" class="suite-select" data-suite="0" aria-pressed="true">SUN PAVILION</button><button type="button" class="suite-select" data-suite="1" aria-pressed="false">MOON PAVILION</button><button type="button" class="suite-select" data-suite="2" aria-pressed="false">EDEN PAVILION</button><button type="button" class="suite-select" data-suite="3" aria-pressed="false">JADE PAVILION</button><button type="button" class="suite-select" data-suite="4" aria-pressed="false">LOTUS</button><button type="button" class="suite-select" data-suite="5" aria-pressed="false">SIAM</button><button type="button" class="suite-select" data-suite="6" aria-pressed="false">SHANGHAI</button><button type="button" class="suite-select" data-suite="7" aria-pressed="false">HANOK</button></div>
-<section class="rv-villa-panel" aria-label="Selected villa"><div class="rv-villa-main">
-<div class="rv-villa-photo sun-pavilion" id="suiteArt"><span class="rv-photo-label" id="suitePhotoLabel">VILLA 01 · BEDROOM CONCEPT</span><div class="rv-photo-center"><span id="suitePhotoTitle">Sun Pavilion</span><small>IMAGE COMING SOON</small></div></div>
-<div class="rv-villa-details"><span class="eyebrow" id="suiteNumber">VILLA · 01 / 08</span><h3 id="suiteName">Sun Pavilion</h3><div class="line"></div><p id="suiteDescription">A Japanese garden sanctuary with a king bedroom facing a koi garden, private onsen, and secluded outdoor relaxation pavilion.</p><div class="rv-villa-amenities"><span>✧ Private Villa</span><span>♨ Bathing</span><span>♧ Landscaped Grounds</span><span>☽ Overnight Stay</span></div><div class="discover-controls"><button type="button" id="suitePrev">← Previous Villa</button><button type="button" id="suiteNext">Next Villa →</button></div></div>
+<section class="rv-villa-panel rv-villa-simple" aria-label="Selected villa">
+<a class="rv-villa-fullimage" id="suiteImageLink" href="asset/suites/sun-pavilion-layout.webp" target="_blank" rel="noopener" aria-label="Open full-size pavilion architectural plan">
+<img id="suiteMainImage" src="asset/suites/sun-pavilion-layout.webp" alt="Sun Pavilion architectural presentation showing floor plan, front elevation, cutaway and key plan" loading="eager">
+<div class="rv-villa-image-fallback" id="suiteImageFallback" hidden>IMAGE COMING SOON</div>
+</a>
+<div class="rv-villa-summary">
+<div class="rv-villa-summary-text"><span class="eyebrow" id="suiteNumber">VILLA · 01 / 08 · GARDEN VIEW</span><h3 id="suiteName">Sun Pavilion</h3><p id="suiteDescription">A Japanese garden sanctuary with a king bedroom facing a koi garden, private onsen, and secluded outdoor relaxation pavilion.</p></div>
+<div class="discover-controls rv-villa-summary-controls"><button type="button" id="suitePrev">← Previous Villa</button><button type="button" id="suiteNext">Next Villa →</button></div>
 </div>
-<div class="rv-villa-gallery-head"><span class="eyebrow">EXPLORE THIS VILLA</span><span id="suiteGalleryNote">Concept plans ready · Individual room photos to follow</span></div>
-<div class="rv-gallery" id="suiteGallery" aria-label="Villa gallery"><button type="button" class="rv-gallery-tile selected"><span class="rv-gallery-preview">01</span><span>Bedroom</span></button><button type="button" class="rv-gallery-tile"><span class="rv-gallery-preview">02</span><span>Garden</span></button><button type="button" class="rv-gallery-tile"><span class="rv-gallery-preview">03</span><span>Onsen</span></button><button type="button" class="rv-gallery-tile"><span class="rv-gallery-preview">04</span><span>Lounge</span></button><button type="button" class="rv-gallery-tile"><span class="rv-gallery-preview">05</span><span>Bathroom</span></button></div>
-<div class="rv-layout-toggle-row"><button type="button" class="rv-layout-toggle" id="suiteLayoutToggle" aria-expanded="false" aria-controls="suiteLayout">VIEW SUITE LAYOUT <span id="layoutChevron">＋</span></button></div>
-<div class="rv-layout" id="suiteLayout" hidden><div class="rv-layout-head"><span class="eyebrow">CONCEPTUAL FLOOR PLAN · NOT TO SCALE</span><h3 id="suiteLayoutName">Sun Pavilion — Conceptual Suite Layout</h3><p>Indicative arrangement of a standalone private villa. Layout and dimensions are for worldbuilding, not construction.</p></div>
-<div class="rv-plan-wrap"><img id="suitePlanImage" class="rv-suite-plan-image" alt="Conceptual suite architectural presentation" hidden><svg id="suiteFallbackPlan" viewBox="0 0 720 475" role="img" aria-label="Conceptual Moon Pavilion floor plan with private garden, bedroom, lounge and onsen">
-<rect x="7" y="7" width="706" height="460" rx="12" fill="#2b1b20" stroke="#be9974" stroke-width="3"/>
-<rect x="28" y="28" width="255" height="420" rx="6" fill="#2b4335" stroke="#a8ac80" stroke-width="2"/>
-<text x="155" y="55" text-anchor="middle" fill="#eddbc8" font-size="18">PRIVATE GARDEN</text>
-<path d="M80 125 Q210 170 110 250 Q45 308 187 384" stroke="#ccbea0" stroke-width="19" stroke-dasharray="10 12" fill="none" opacity=".8"/>
-<circle cx="174" cy="310" r="56" fill="#496e70" stroke="#9ac4b3" stroke-width="3"/><text x="174" y="315" text-anchor="middle" fill="#f8eee4" font-size="16">KOI POND</text>
-<circle cx="70" cy="97" r="32" fill="#5e7451"/><circle cx="217" cy="116" r="25" fill="#856052"/><circle cx="79" cy="382" r="24" fill="#647c53"/>
-<rect x="299" y="28" width="226" height="275" rx="5" fill="#594239" stroke="#ba987c" stroke-width="2"/>
-<text x="412" y="56" text-anchor="middle" fill="#f8e9d8" font-size="18">BEDROOM</text>
-<rect x="350" y="100" width="124" height="157" rx="12" fill="#762e40" stroke="#d7b999" stroke-width="3"/>
-<rect x="363" y="110" width="98" height="34" rx="7" fill="#d9beb1"/><text x="412" y="199" text-anchor="middle" fill="white" font-size="16">KING BED</text>
-<rect x="299" y="318" width="226" height="130" rx="5" fill="#50383b" stroke="#ba987c" stroke-width="2"/>
-<text x="412" y="347" text-anchor="middle" fill="#f8e9d8" font-size="18">LOUNGE / ENTRY</text>
-<circle cx="410" cy="394" r="30" fill="#825743" stroke="#cfb18a" stroke-width="3"/>
-<rect x="540" y="28" width="150" height="255" rx="5" fill="#4b4a43" stroke="#baa080" stroke-width="2"/>
-<text x="615" y="58" text-anchor="middle" fill="#fff1de" font-size="17">ONSEN</text>
-<circle cx="614" cy="151" r="57" fill="#557a7c" stroke="#c7b293" stroke-width="7"/><text x="614" y="157" text-anchor="middle" fill="white" font-size="15">STONE BATH</text>
-<rect x="540" y="298" width="150" height="150" rx="5" fill="#51413c" stroke="#baa080" stroke-width="2"/>
-<text x="615" y="330" text-anchor="middle" fill="#fff1de" font-size="15">SHOWER</text><text x="615" y="352" text-anchor="middle" fill="#fff1de" font-size="15">& VANITY</text>
-<path d="M282 176 L300 176 M525 176 L540 176 M525 364 L540 364" stroke="#f2d49b" stroke-width="6" stroke-dasharray="5 5"/>
-</svg>
-<div class="rv-plan-notes"><h4>Moon Pavilion</h4><p>Garden, king-size sleeping chamber, private lounge, onsen-style soaking bath, separate shower and vanity.</p><p><strong>Concept only:</strong> a private garden framed by glass, connecting the bedroom and bathing area.</p><div class="rv-plan-specs"><span>Private Garden</span><span>King Bed</span><span>Onsen</span><span>Rain Shower</span></div></div></div></div>
-</section></section>
+</section>
+</section>
 <section class="closing"><div class="eyebrow">YOUR STORY BEGINS HERE</div><h2>Meet Our Ladies</h2><p>Every character has a story. Discover the women who bring The Red Velvet to life.</p><a class="button" href="ladies.html">Explore Our Ladies →</a></section>
 </main>
 <footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer><script>
@@ -257,11 +251,28 @@ const suites=[
 {name:"Shanghai",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]},
 {name:"Hanok",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]}
 ];
-let activeSuite=0,activeGallery=0;
-function chooseSuite(i){activeSuite=(i+suites.length)%suites.length;activeGallery=0;renderSuite()}
-function renderSuite(){const v=suites[activeSuite],index=String(activeSuite+1).padStart(2,"0");const art=document.getElementById("suiteArt");art.className="rv-villa-photo "+v.name.toLowerCase().replace(/ /g,"-");let bg=art.querySelector(".rv-uploaded-image");if(!bg){bg=document.createElement("img");bg.className="rv-uploaded-image";bg.alt="";art.prepend(bg)}bg.style.display=v.slug?"block":"none";bg.onerror=()=>{bg.style.display="none"};if(v.slug){bg.src="asset/suites/"+v.slug+"-layout.webp"}document.getElementById("suiteName").textContent=v.name.includes("Pavilion")?v.name:"The "+v.name+" Suite";document.getElementById("suitePhotoTitle").textContent=document.getElementById("suiteName").textContent;document.getElementById("suiteDescription").textContent=v.desc;document.getElementById("suiteNumber").textContent="VILLA · "+index+" / 08 · "+v.view.toUpperCase()+" VIEW";document.getElementById("suitePhotoLabel").textContent="VILLA "+index+" · "+v.themes[activeGallery].toUpperCase()+" CONCEPT";document.querySelectorAll(".suite-select").forEach((b,n)=>b.setAttribute("aria-pressed",String(n===activeSuite)));const gallery=document.getElementById("suiteGallery");gallery.replaceChildren();v.themes.forEach((label,i)=>{const b=document.createElement("button");b.type="button";b.className="rv-gallery-tile"+(i===activeGallery?" selected":"");b.setAttribute("aria-pressed",String(i===activeGallery));const preview=document.createElement("span");preview.className="rv-gallery-preview";preview.textContent=String(i+1).padStart(2,"0");if(v.slug){const im=document.createElement("img");im.alt="";im.src="asset/suites/"+v.slug+"-layout.webp";im.onerror=()=>im.remove();preview.append(im)}const t=document.createElement("span");t.textContent=label;b.append(preview,t);b.addEventListener("click",()=>{activeGallery=i;renderSuite()});gallery.appendChild(b)});document.getElementById("suiteGalleryNote").textContent=v.slug?"Concept plans ready · Individual room photos to follow":"Visuals to be developed";document.getElementById("suiteLayoutName").textContent=v.name+" — Conceptual Suite Layout";const planImage=document.getElementById("suitePlanImage");planImage.hidden=!v.slug;document.getElementById("suiteFallbackPlan").style.display=v.slug?"none":"block";if(v.slug){planImage.src="asset/suites/"+v.slug+"-layout.webp";planImage.onerror=()=>{planImage.hidden=true;document.getElementById("suiteFallbackPlan").style.display="block"}}document.getElementById("suiteLayoutToggle").hidden=!v.slug;document.getElementById("suiteLayout").hidden=true;document.getElementById("suiteLayoutToggle").setAttribute("aria-expanded","false");document.getElementById("layoutChevron").textContent="＋";}
+let activeSuite=0;
+function chooseSuite(i){
+ activeSuite=(i+suites.length)%suites.length;
+ const v=suites[activeSuite],index=String(activeSuite+1).padStart(2,"0");
+ document.getElementById("suiteName").textContent=v.name.includes("Pavilion")?v.name:"The "+v.name+" Suite";
+ document.getElementById("suiteDescription").textContent=v.desc;
+ document.getElementById("suiteNumber").textContent="VILLA · "+index+" / 08 · "+v.view.toUpperCase()+" VIEW";
+ document.querySelectorAll(".suite-select").forEach((b,n)=>b.setAttribute("aria-pressed",String(n===activeSuite)));
+ const link=document.getElementById("suiteImageLink"),im=document.getElementById("suiteMainImage"),fallback=document.getElementById("suiteImageFallback");
+ if(v.slug){
+   const path="asset/suites/"+v.slug+"-layout.webp";
+   link.href=path;link.style.pointerEvents="auto";im.hidden=false;fallback.hidden=true;
+   im.alt=v.name+" full architectural concept with floor plan, front elevation, cutaway and key plan";
+   im.src=path;
+ }else{
+   link.removeAttribute("href");link.style.pointerEvents="none";im.hidden=true;fallback.hidden=false;
+   fallback.textContent=v.name+" — imagery to be developed";
+ }
+}
+document.getElementById("suiteMainImage").addEventListener("error",function(){this.hidden=true;document.getElementById("suiteImageFallback").hidden=false});
 document.querySelectorAll(".suite-select").forEach(b=>b.addEventListener("click",()=>chooseSuite(Number(b.dataset.suite))));
-document.getElementById("suitePrev").addEventListener("click",()=>chooseSuite(activeSuite-1));document.getElementById("suiteNext").addEventListener("click",()=>chooseSuite(activeSuite+1));
-document.getElementById("suiteLayoutToggle").addEventListener("click",()=>{const el=document.getElementById("suiteLayout");el.hidden=!el.hidden;document.getElementById("suiteLayoutToggle").setAttribute("aria-expanded",String(!el.hidden));document.getElementById("layoutChevron").textContent=el.hidden?"＋":"−"});
+document.getElementById("suitePrev").addEventListener("click",()=>chooseSuite(activeSuite-1));
+document.getElementById("suiteNext").addEventListener("click",()=>chooseSuite(activeSuite+1));
 chooseSuite(0);
 </script></body></html>
