@@ -214,15 +214,15 @@ footer{text-align:center;padding:26px 20px;font-size:10px;letter-spacing:.18em;c
 <div class="discover-selectors" role="group" aria-label="Explore The Red Velvet"><button class="discover-select" data-scene="house" aria-pressed="true">THE HOUSE</button><button class="discover-select" data-scene="experience" aria-pressed="false">THE EXPERIENCE</button></div>
 <section class="discover-feature" aria-live="polite"><div class="discover-art house" id="discoverArt" role="img" aria-label="The House"><span class="discover-art-caption" id="discoverCaption">THE RED VELVET · 01</span></div><div class="discover-info"><div class="eyebrow" id="discoverNumber">DISCOVER · 01 / 02</div><h2 id="discoverName">The House</h2><div class="line"></div><p id="discoverDescription">Beyond the entrance, the world grows quieter. Warm light, velvet textures and a sense of privacy define a house where every detail has been chosen with care.</p><div class="discover-controls"><button type="button" id="discoverPrev">← Previous</button><button type="button" id="discoverNext">Next →</button></div></div></section>
 <section class="suites-collection" id="suites">
-<div class="suites-intro"><div class="eyebrow">THE RED VELVET · PRIVATE ESTATE</div><h2>The Suites</h2><p>Eight secluded Asian-inspired villas, each with its own character and setting.</p></div>
-<div class="suite-selectors" role="group" aria-label="Choose a villa"><button type="button" class="suite-select" data-suite="0" aria-pressed="true">SUN PAVILION</button><button type="button" class="suite-select" data-suite="1" aria-pressed="false">MOON PAVILION</button><button type="button" class="suite-select" data-suite="2" aria-pressed="false">EDEN PAVILION</button><button type="button" class="suite-select" data-suite="3" aria-pressed="false">JADE PAVILION</button><button type="button" class="suite-select" data-suite="4" aria-pressed="false">LOTUS</button><button type="button" class="suite-select" data-suite="5" aria-pressed="false">SIAM</button><button type="button" class="suite-select" data-suite="6" aria-pressed="false">SHANGHAI</button><button type="button" class="suite-select" data-suite="7" aria-pressed="false">HANOK</button></div>
+<div class="suites-intro"><div class="eyebrow">THE RED VELVET · PRIVATE ESTATE</div><h2>The Suites</h2><p>Four signature Asian-inspired pavilions, each with its own character and setting.</p></div>
+<div class="suite-selectors" role="group" aria-label="Choose a villa"><button type="button" class="suite-select" data-suite="0" aria-pressed="true">SUN PAVILION</button><button type="button" class="suite-select" data-suite="1" aria-pressed="false">MOON PAVILION</button><button type="button" class="suite-select" data-suite="2" aria-pressed="false">EDEN PAVILION</button><button type="button" class="suite-select" data-suite="3" aria-pressed="false">JADE PAVILION</button></div>
 <section class="rv-villa-panel rv-villa-simple" aria-label="Selected villa">
 <a class="rv-villa-fullimage" id="suiteImageLink" href="asset/suites/sun-pavilion-layout.webp" target="_blank" rel="noopener" aria-label="Open full-size pavilion architectural plan">
 <img id="suiteMainImage" src="asset/suites/sun-pavilion-layout.webp" alt="Sun Pavilion architectural presentation showing floor plan, front elevation, cutaway and key plan" loading="eager">
 <div class="rv-villa-image-fallback" id="suiteImageFallback" hidden>IMAGE COMING SOON</div>
 </a>
 <div class="rv-villa-summary">
-<div class="rv-villa-summary-text"><span class="eyebrow" id="suiteNumber">VILLA · 01 / 08 · GARDEN VIEW</span><h3 id="suiteName">Sun Pavilion</h3><p id="suiteDescription">A Japanese garden sanctuary with a king bedroom facing a koi garden, private onsen, and secluded outdoor relaxation pavilion.</p></div>
+<div class="rv-villa-summary-text"><span class="eyebrow" id="suiteNumber">VILLA · 01 / 04 · GARDEN VIEW</span><h3 id="suiteName">Sun Pavilion</h3><p id="suiteDescription">A Japanese garden sanctuary with a king bedroom facing a koi garden, private onsen, and secluded outdoor relaxation pavilion.</p></div>
 <div class="discover-controls rv-villa-summary-controls"><button type="button" id="suitePrev">← Previous Villa</button><button type="button" id="suiteNext">Next Villa →</button></div>
 </div>
 </section>
@@ -245,11 +245,7 @@ const suites=[
 {name:"Sun Pavilion",desc:"A Japanese garden sanctuary with a king bedroom facing a koi garden, private onsen, and secluded outdoor relaxation pavilion.",view:"Garden",slug:"sun-pavilion",themes:["Bedroom","Garden","Onsen","Lounge","Bathroom"]},
 {name:"Moon Pavilion",desc:"A Chinese imperial garden retreat with a moon-gate courtyard, elegant canopy bed, tea salon, private massage room and deep floral soaking bath.",view:"Garden",slug:"moon-pavilion",themes:["Bedroom","Moon Courtyard","Soaking Bath","Tea Salon","Massage Room"]},
 {name:"Eden Pavilion",desc:"A Balinese tropical villa with a private plunge pool, open-air jacuzzi, four-poster bedroom, personal spa retreat and steam room.",view:"Garden",slug:"eden-pavilion",themes:["Bedroom","Private Pool","Jacuzzi","Spa Retreat","Steam Room"]},
-{name:"Jade Pavilion",desc:"A Korean ocean-view residence with a panoramic sleeping chamber, sunken fireplace lounge, heated ondol retreat and ocean-facing deck.",view:"Ocean",slug:"jade-pavilion",themes:["Bedroom","Ocean Deck","Fireplace Lounge","Conservatory","Ondol Retreat"]},
-{name:"Lotus",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]},
-{name:"Siam",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]},
-{name:"Shanghai",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]},
-{name:"Hanok",desc:"An Asian-inspired private villa; its design is being developed.",view:"Garden",themes:["Bedroom","Lounge","Bath","Garden","Details"]}
+{name:"Jade Pavilion",desc:"A Korean ocean-view residence with a panoramic sleeping chamber, sunken fireplace lounge, heated ondol retreat and ocean-facing deck.",view:"Ocean",slug:"jade-pavilion",themes:["Bedroom","Ocean Deck","Fireplace Lounge","Conservatory","Ondol Retreat"]}
 ];
 let activeSuite=0;
 function chooseSuite(i){
@@ -257,7 +253,7 @@ function chooseSuite(i){
  const v=suites[activeSuite],index=String(activeSuite+1).padStart(2,"0");
  document.getElementById("suiteName").textContent=v.name.includes("Pavilion")?v.name:"The "+v.name+" Suite";
  document.getElementById("suiteDescription").textContent=v.desc;
- document.getElementById("suiteNumber").textContent="VILLA · "+index+" / 08 · "+v.view.toUpperCase()+" VIEW";
+ document.getElementById("suiteNumber").textContent="VILLA · "+index+" / 04 · "+v.view.toUpperCase()+" VIEW";
  document.querySelectorAll(".suite-select").forEach((b,n)=>b.setAttribute("aria-pressed",String(n===activeSuite)));
  const link=document.getElementById("suiteImageLink"),im=document.getElementById("suiteMainImage"),fallback=document.getElementById("suiteImageFallback");
  if(v.slug){
