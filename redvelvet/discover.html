@@ -20,7 +20,7 @@ nav{display:flex;align-items:center;gap:clamp(10px,1.65vw,25px)}nav a{font:400 1
 .chapter-art.suites{background:radial-gradient(ellipse at 54% 39%,#a36550a8,transparent 34%),radial-gradient(ellipse at 35% 88%,#651b34 0%,transparent 55%),linear-gradient(132deg,#130408,#50152a 52%,#130408)}
 .chapter-art.suites:before{content:"";position:absolute;inset:13% 17%;border:1px solid #c7a17844;border-top:7px solid #a87e6540;box-shadow:0 0 90px 25px #160608bb, inset 0 0 100px #15060999}
 .chapter-art.suites:after{content:"";position:absolute;left:25%;right:25%;bottom:15%;height:26%;border-radius:35% 35% 4% 4%;background:linear-gradient(#87314999,#290a16);box-shadow:0 10px 55px #130408}
-.chapter-art.experience{background:linear-gradient(90deg,transparent 80%,#17070b),url('asset/uniform.webp') 32% center/cover no-repeat}
+.chapter-art.experience{background:linear-gradient(90deg,transparent 78%,#17070b),linear-gradient(0deg,rgba(30,7,16,.58),rgba(30,7,16,.15)),url('asset/experience.webp') 62% center/cover no-repeat}
 .chapter-art .scene-label{position:absolute;z-index:2;bottom:24px;left:30px;font-size:10px;letter-spacing:.23em;color:#ecd0b8;text-shadow:0 2px 5px #000}
 .chapter-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:80px clamp(30px,7vw,125px);background:radial-gradient(ellipse at 60% 36%,#3d1422,#160609 72%)}
 .chapter-copy h2{font-size:clamp(54px,6vw,88px);margin:10px 0 15px}.chapter-copy p{max-width:480px;color:var(--muted);font-size:clamp(15px,1.2vw,18px);line-height:1.9}
@@ -34,6 +34,13 @@ footer{text-align:center;padding:26px 20px;font-size:10px;letter-spacing:.18em;c
 @media(max-width:900px){header{align-items:flex-start;flex-wrap:wrap;gap:12px}nav{width:100%;overflow-x:auto;scrollbar-width:none;padding:0 0 9px;gap:20px}nav::-webkit-scrollbar{display:none}nav a{flex:none}.hero-inner{padding-top:115px}.chapter,.chapter.reverse{grid-template-columns:1fr}.chapter-art,.chapter.reverse .chapter-art{order:1;min-height:370px;mask-image:linear-gradient(0deg,transparent,#000 29%)!important}.chapter-copy,.chapter.reverse .chapter-copy{order:2;padding:20px 28px 78px}.chapter-copy h2{font-size:62px}.opening{padding-top:115px}.hero{min-height:640px}}
 @media(max-width:560px){.hero{height:83svh;min-height:620px}.hero:before{background-position:70% center}.hero:after{background:linear-gradient(0deg,#19070be8 0%,#19070bc2 30%,#19070b2e 75%),linear-gradient(90deg,#130407aa,transparent)}.hero-inner{align-self:flex-end;padding:0 0 120px}.hero h1{font-size:clamp(55px,13vw,76px)}.hero p{font-size:24px}.opening{margin-top:-65px;padding-top:115px;padding-bottom:65px}.chapter-art{min-height:330px}.chapter-copy{padding:16px 24px 72px}.chapter-copy h2{font-size:57px}.closing{padding:85px 22px 100px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Discover: chapter transitions and gallery atmosphere */
+.chapter-art.house:after,.chapter-art.experience:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#160609 0%,transparent 18%,transparent 85%,#160609 100%)}
+.chapter.reverse .chapter-art.suites{background:radial-gradient(ellipse at 70% 25%,rgba(201,129,97,.28),transparent 37%),radial-gradient(ellipse at 25% 83%,#5d2035,transparent 65%),linear-gradient(135deg,#1c080f,#4a1427 54%,#160609)}
+.chapter-copy h2{letter-spacing:.01em}
+.chapter-copy p{max-width:540px}
+@media(max-width:850px){.chapter-art.house:after,.chapter-art.experience:after{background:linear-gradient(0deg,#160609,transparent 28%,transparent 90%,#160609)}}
 </style></head><body>
 <header><a class="brand" href="index.html"><small>THE</small>Red <em>Velvet</em></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="ladies.html">Our Ladies</a><a href="uniform.html">Our Uniform</a><a href="discover.html" aria-current="page">Discover</a><a class="invite" href="index.html#invitation">By Invitation Only</a></nav></header>
 <main><section class="hero"><div class="hero-inner"><div class="eyebrow">BY INVITATION ONLY</div><div class="line"></div><h1>Discover<br><em>The Red Velvet</em></h1><p>Beyond its doors lies a world of discretion, elegance, and unforgettable encounters.</p></div></section>
