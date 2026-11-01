@@ -122,8 +122,19 @@ figure{margin:0;min-width:0}figure img{width:100%;display:block;object-fit:cover
 .uniform-missing span{font:65px Georgia,serif;color:#a82442}.uniform-missing small{font:10px Jost,Arial,sans-serif}
 @media(max-width:900px){.uniform-feature{grid-template-columns:1fr}.uniform-product{min-height:490px}.uniform-product img{height:min(110vw,620px)}.uniform-product:after{background:linear-gradient(0deg,#19080d,transparent 27%)}.uniform-info{padding:30px 26px 56px}.uniform-intro{padding:46px 16px 34px}}
 @media(max-width:450px){.uniform-product{min-height:400px}.uniform-product img{height:470px}.uniform-info h2{font-size:60px}.uniform-select{padding:12px 14px}}
+
+/* Shared Red Velvet header, consistent across all site pages */
+.rv-header{position:relative;z-index:30;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:clamp(14px,2vw,30px);min-height:78px;height:auto;padding:12px clamp(18px,3vw,52px);background:linear-gradient(180deg,#160609,#210911);border-bottom:1px solid rgba(197,167,126,.18)}
+.rv-header .rv-logo{display:flex;align-items:center;gap:10px;flex:none;color:#f3e5d6;white-space:nowrap;font:clamp(25px,2.4vw,36px)/.85 'Cormorant Garamond',Georgia,serif;text-decoration:none}
+.rv-header .rv-logo small{display:block;font:9px/1.2 Jost,Arial,sans-serif;letter-spacing:.25em}.rv-header .rv-logo em{color:#b93c59;font-style:normal}.rv-header .rv-rose{font:32px Georgia,serif;color:#ab2545}
+.rv-header .rv-navigation{position:static;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;flex:1;min-width:0;gap:8px clamp(10px,1.4vw,23px);padding:0;background:none;border:0;overflow:visible}
+.rv-header .rv-navigation a{display:inline-block;flex:none;white-space:nowrap;padding:6px 0;color:#f3e5d6;text-decoration:none;font:400 clamp(9px,.72vw,11px) Jost,Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase}
+.rv-header .rv-navigation a:hover,.rv-header .rv-navigation a[aria-current="page"]{color:#c5a77e}
+.rv-header .rv-navigation .rv-invite{margin-left:4px;border:1px solid #c5a77e;padding:10px 12px}
+@media(max-width:1220px){.rv-header{flex-wrap:wrap;justify-content:center;gap:11px}.rv-header .rv-navigation{justify-content:center;flex-basis:100%}}
+@media(max-width:650px){.rv-header{justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:10px;min-height:0;padding:12px 16px}.rv-header .rv-logo{font-size:27px}.rv-header .rv-navigation{flex-basis:100%;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:20px;padding:8px 0 2px}.rv-header .rv-navigation::-webkit-scrollbar{display:none}.rv-header .rv-navigation a{font-size:10px}.rv-header .rv-navigation .rv-invite{margin-left:0}}
 </style></head><body>
-<header><a class="brand" href="index.html"><small>THE</small>Red <em>Velvet</em></a><nav><a href="index.html">Home</a><a href="index.html#ladies">Our Ladies</a><a href="index.html#experience">The Experience</a><a class="outline" href="index.html#invitation">By Invitation Only</a></nav></header>
+<header class="rv-header"><a class="rv-logo" href="index.html"><span class="rv-rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="rv-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="ladies.html">Our Ladies</a><a href="uniform.html" aria-current="page">Our Uniform</a><a href="discover.html">Discover</a><a href="index.html#invitation">Our Story</a><a href="index.html#invitation">The House List</a><a href="index.html#invitation">The Rules</a><a href="index.html#invitation" class="rv-invite">By Invitation Only</a></nav></header>
 <main>
 <section class="uniform-intro"><div class="kicker">THE RED VELVET · SIGNATURE COLLECTION</div><h1>Our Uniform</h1><p>Elegant. Sensual. Unmistakably Red Velvet.</p></section>
 <div class="uniform-selectors" aria-label="Choose an outfit"><button type="button" class="uniform-select" data-look="qipao" aria-pressed="true">THE QIPAO</button><button type="button" class="uniform-select" data-look="jacket" aria-pressed="false">THE JACKET</button></div>
